@@ -1,0 +1,79 @@
+ What is Scope?
+Scope refers to where in your code variables are accessible.
+
+In JavaScript, scope determines the visibility and lifetime of a variable — that is, where you can use or access that variable.
+
+🧰 Types of Scope in JavaScript:
+1. Global Scope
+A variable declared outside of any function or block.
+
+Available everywhere in your code.
+
+js
+Copy code
+let globalVar = "I am global";
+
+function show() {
+  console.log(globalVar); // ✅ Accessible
+}
+show();
+console.log(globalVar); // ✅ Accessible
+2. Function Scope
+A variable declared inside a function is only accessible within that function.
+
+js
+Copy code
+function test() {
+  let message = "Hello!";
+  console.log(message); // ✅ Accessible
+}
+test();
+console.log(message); // ❌ Error: message is not defined
+3. Block Scope (with let and const)
+Introduced in ES6.
+
+Variables declared with let or const are limited to the block {} where they are defined.
+
+js
+Copy code
+{
+  let a = 10;
+  const b = 20;
+  console.log(a, b); // ✅
+}
+console.log(a); // ❌ Error
+console.log(b); // ❌ Error
+🔸 var does not follow block scope — only function scope.
+
+js
+Copy code
+{
+  var x = 5;
+}
+console.log(x); // ✅ Works — no block scope for var
+🧬 Scope Chain
+When you try to access a variable, JavaScript looks:
+
+In the current scope
+
+Then in the parent scope
+
+Then continues up the chain until it finds it or throws an error
+
+js
+Copy code
+let a = "global";
+
+function outer() {
+  let b = "outer";
+  
+  function inner() {
+    let c = "inner";
+    console.log(a, b, c); // ✅ Can access all
+  }
+
+  inner();
+  console.log(a, b);   // ✅
+  console.log(c);      // ❌ Error
+}
+outer();
