@@ -69,3 +69,18 @@ console.log(bcci.hasOwnProperty("age"));
 
 console.log(bcci.hasOwnProperty("height"));
 //returns false if the object does not have the specified property
+
+const team={
+    name:"CSSK",
+    Team_price:1,
+
+    teamCaptain:"Rohit Sharma",
+}
+const {teamCaptain:captain} = team;
+//console.log(teamCaptain);
+console.log(captain);
+console.log(team);
+//returns the value of the property teamCaptain from the team object and assigns it to the variable captain
+const{name:pname}=team;
+console.log(pname);
+//returns the value of the property name from the team object and assigns it to the variable pname
