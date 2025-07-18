@@ -1,8 +1,8 @@
 // for each loop
 const arr=["MI","CSK","RCB","DC","LSG"]
-//arr.forEach(function(item){
-  //  console.log(item);
-//})
+arr.forEach(function(item){
+   console.log(item);
+})
 //arr.forEach( (element)=>{
  //console.log(element);
  
