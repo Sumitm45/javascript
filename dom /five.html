@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pre4</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="player">
+         <li>Virat</li>
+
+
+    </ul>
+</body>
+<script>
+     function addplayer(langName){
+      const list=document.createElement('li');
+      list.innerHTML=langName;
+      const doc=document.querySelector('.player');;
+         doc.appendChild(list);
+
+
+     }
+
+     addplayer('Rohit');
+     addplayer('Thala');
+      function optiplayer(play){
+        const pl=document.createElement('li');
+       pl.appendChild(document.createTextNode(play));
+       document.querySelector('.player').appendChild(pl)
+
+      }
+       optiplayer('Dhoni');
+
+       const first=document.querySelector("li:nth-child(1)");
+       const newpl=document.createElement('li');
+       newpl.textContent="ABD";
+       first.replaceWith(newpl);
+
+       const third = document.querySelector("li:nth-child(3)");
+       third.outerHTML = '<li>thali</li>';
+       //third.innerHTML='kohli';
+    //    const newp=document.createElement('li');
+    //   newp.textContent='raina';
+    //    third.replaceWith(newp);
+
+    //remove
+    const last=document.querySelector("li:last-child");
+    last.remove();
+
+
+
+
+</script>
+</html>
